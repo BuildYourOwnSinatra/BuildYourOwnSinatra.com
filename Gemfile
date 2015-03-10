@@ -12,6 +12,7 @@ gem 'eldr-sessions'
 gem 'eldr-assets',     github: 'eldr-rb/eldr-assets'
 gem 'eldr-responders', github: 'eldr-rb/eldr-responders'
 
+gem 'stripe'
 gem 'kramdown'
 gem 'rouge'
 gem 'slim',              '3.0.1'
