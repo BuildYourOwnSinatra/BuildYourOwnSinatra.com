@@ -38,6 +38,12 @@ Then push it:
 $ git push heroku master
 ```
 
+And seed it with data:
+
+```sh
+$ heroku run bundle exec rake seed
+```
+
 ### Locally With Vagrant
 
 First boot a vm with the vagrant file:
