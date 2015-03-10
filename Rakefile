@@ -1,12 +1,14 @@
-require 'rspec/core/rake_task'
-require 'rubocop/rake_task'
+if ENV['RACK_ENV'] == 'test'
+  require 'rspec/core/rake_task'
+  require 'rubocop/rake_task'
 
-RSpec::Core::RakeTask.new(:spec)
-RuboCop::RakeTask.new(:rubocop)
+  RSpec::Core::RakeTask.new(:spec)
+  RuboCop::RakeTask.new(:rubocop)
 
-task :default do
-  Rake::Task['spec'].execute
-  Rake::Task['rubocop'].execute
+  task :default do
+    Rake::Task['spec'].execute
+    Rake::Task['rubocop'].execute
+  end
 end
 
 task :seed do
