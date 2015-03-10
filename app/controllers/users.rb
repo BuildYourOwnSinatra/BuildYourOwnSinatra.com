@@ -6,7 +6,7 @@ class Users < Base
   include Eldr::Sessions
   include Eldr::Rendering
   include Eldr::Responders
-  use Rack::Session::Redis, namespace: ENV['REDIS_NAMESPACE'], url: ENV['REDIS_URL']
+  use Rack::Session::Redis, redis_server: "#{ENV['REDIS_URL']}/#{ENV['REDIS_NAMESPACE']}"
 
   def auth_hash
     env['omniauth.auth']

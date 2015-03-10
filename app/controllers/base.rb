@@ -3,7 +3,7 @@ class Base < Eldr::App
   include Eldr::Responders
   include Eldr::Assets
 
-  use Rack::Session::Redis, namespace: ENV['REDIS_NAMESPACE'], url: ENV['REDIS_URL']
+  use Rack::Session::Redis, redis_server: "#{ENV['REDIS_URL']}/#{ENV['REDIS_NAMESPACE']}"
   use Rack::Flash, accessorize: [:notice, :error]
 
   set :views_dir, File.join(__dir__, '../views')
