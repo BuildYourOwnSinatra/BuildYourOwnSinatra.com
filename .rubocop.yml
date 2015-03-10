@@ -1,0 +1,22 @@
+inherit_from: .rubocop_todo.yml
+
+Style/SignalException:
+  Enabled: false
+
+Style/SingleSpaceBeforeFirstArg:
+  Enabled: false
+
+Style/FileName:
+  Enabled: false
+
+Style/RedundantBegin:
+  Enabled: false
+  
+Metrics/LineLength:
+  Max: 120
+
+AllCops:
+  Exclude:
+    - 'spec/**/*'
+    - 'Gemfile'
+    - 'eldr-sessions.gemspec'

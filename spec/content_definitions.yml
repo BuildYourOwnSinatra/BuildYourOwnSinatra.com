@@ -1,0 +1,20 @@
+has_loop: true
+tagline:
+  burnt_tongue: true
+  has_story: true
+intro:
+  tells_then_hooks: true
+  eldr: true
+  raw_mvc: true
+  helpers_story: true
+section_why:
+  has_burnt_tongue: false
+  make_reader_feel: false
+  has_story: false
+  really_learn_rack: false
+  mentions_internals: false
+  has_loop: false
+section_what:
+  mentions_raw_mvc: true
+  mentions_eldr: true
+  mentions_this_site: true

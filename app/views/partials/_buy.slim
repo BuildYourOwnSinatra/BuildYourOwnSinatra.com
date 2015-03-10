@@ -1,0 +1,20 @@
+- price ||= 35
+
+- if signed_in?
+  - desc  ||= 'The Book'
+
+  form action="/purchases" method="POST"
+    script [
+      src="https://checkout.stripe.com/checkout.js"
+      class="buy-button"
+      data-key=ENV['STRIPE_PUBLIC']
+      data-image="/img/documentation/checkout/marketplace.png"
+      data-name="Build Your Own Sinatra"
+      data-description=desc
+      data-amount=price
+      data-email=current_user.email
+      data-label=="Buy now for $#{price}"]
+
+- else
+
+  a.buy-button href='/login' Buy now for $#{price}

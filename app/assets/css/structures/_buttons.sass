@@ -1,0 +1,29 @@
+@import "colors"
+
+.button
+  padding: 8px 14px 8px 14px
+  transition: color 0.1s ease-in
+
+.button-turquiose
+  @extend .button
+  background: $turquiose
+  color: $very-light-gray
+
+  &:hover
+    background: $dark-turquiose
+
+.button-green
+  @extend .button
+  background: $green
+  color: $very-light-gray
+
+  &:hover
+    background: $dark-green
+
+.button-blue
+  @extend .button
+  background: $blue
+  color: $very-light-gray
+
+  &:hover
+    background: $dark-blue

@@ -1,0 +1,135 @@
+doctype html
+html
+  head
+    link href='http://fonts.googleapis.com/css?family=Lato:400,300,300italic,100italic,100,400italic,700' rel='stylesheet' type='text/css'
+    == css 'app'
+
+  body
+    header
+      .container
+        == partial 'partials/_nav.slim'
+
+        .tagline
+          markdown:
+            # Build Your Own Sinatra
+
+            The time I cussed at `helpers do`, I wrote a book on Ruby frameworks.
+            A book about Rack, Sinatra, Rails, and all the fustrating things inbetween.
+            Master the rack spec, write raw rack apps, learn how to write middleware, how to build a router, and more!
+          a.excerpt-button href='https://book.buildYourOwnSinatra.com' Read an Excerpt
+          a.buy-button href="#packages" Buy It
+
+        .cover
+          .code
+            markdown:
+              ```ruby
+              ###############################################################
+              # Build Your Own Sinatra                                      #
+              # BY: K-2052                                                  #
+              ###############################################################
+
+              class Cover < YourFramework
+                get '/' do
+                  msg = "Hey \#{params['name']}, ready to build a framework?!"
+                  AwesomeReponse.new msg, 200
+                end
+              end
+              ```
+  .container
+    section.intro
+      markdown:
+        tear apart call and env, construct middleware, build an MVC Rack app without any framework, build a framework called [Eldr](https://github.com/eldr). Also, you will cuss at helpers blocks.
+    section.why
+      h1 You should read it if
+      .reasons
+        markdown:
+          - You have ever wanted to learn how ruby frameworks work.
+          - You are curious about stuff like env(), call() and use()
+          - Want to build your own framework
+          - Want to modify and contribute to your favorite framework
+          - Have ever cussed at anything sinatra or rails did
+          - if you hate helper blocks
+    section.what
+      h1 What you will build
+      .what-container
+        .an-app
+          .img-wrap
+            markdown:
+              ```ruby
+              module MVC
+                class BaseController
+                  @@routes = {'GET' => []}
+
+                  def self.call(env)
+                    route = self.find_route(env)
+                    route.block.call(env)
+                  end
+                  # ...
+                end
+              end
+              ```
+          h2 Raw Apps on Rack
+          markdown:
+            You will build rack middleware and raw rack apps right on the metal. You will build a MVC app on top of Rack without any framework. No rails, no sinatra, no router, no framework of any kind just Rack.
+        .a-framework
+          .img-wrap
+            markdown:
+              ```ruby
+              class App < YourFramework
+                get '/' do
+                  Rack::Response.new 'Hello World!'
+                end
+              end
+              ```
+          h2 A framework
+          markdown:
+            You will be walked through how to build a microframework called [Eldr](https://github.com/eldr-rb/eldr). Eldr is a simple, flexible, and clear framework without the magic.
+        .this-site
+          .img-wrap
+            markdown:
+              ```ruby
+              post '/purchases', name: :create do
+                PurchaseBook.new(package: @package,
+                                    user: current_user,
+                                   token: @stripeToken)
+                .call(env)
+              end
+              ```
+          h2 This site
+          markdown:
+            Once you have built a framework you will be walked through building a real world project; this site. We will build stripe powered purchases, views rendering, asset helpers, session handling, responders and access control extensions.
+
+  .lower
+    .container
+      section.features
+        h1 What you will get
+        .features-row
+          .feature.chapters
+            .img-wrap
+              img src="images/open-book.svg"
+            h2 8 Chapters and 150 pages
+            markdown:
+              Eight chapters packed full of code samples, tests, useful insights, and penguin puns* You will tackle everything from middleware building to building a framework!
+            small * Disclaimer: no penguin puns are included in the book -- they got too cold.
+          .feature.sources
+            .img-wrap
+              img src="images/code.svg"
+            h2 Code Commits + Full Example apps
+            markdown:
+              Code examples are split up into different commits and tagged so you can follow right along. Never get stuck with broken code, just git clone and see where you went wrong!
+        .features-row
+          .feature.book-source
+            .img-wrap
+              img src="images/github.svg"
+            h2 The source to the book
+            markdown:
+              When you purchase the book you will be given access to a private GitHub repo with the book's source. You can file issues, make pull requests, customize ebook builds etc.
+          .feature.a-framework
+            .img-wrap
+              img src="images/map.svg"
+            h2 An Awesome Framework
+            markdown:
+              A minimal, lighweight, clear and powerful framework. A framework that doesn't hide the rack and comes without magic. It's called Eldr and you can fork it [on GitHub](https:/github.con/eldr-rb/eldr)
+
+      section.buy
+          == partial 'partials/_buy', locals: {price: 35}

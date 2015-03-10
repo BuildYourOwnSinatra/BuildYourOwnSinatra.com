@@ -1,0 +1,32 @@
+    section#packages.packages
+      .thirty-five
+        h2 Just The Book
+        ul.includes
+          li.book The book in html, PDF, epub and mobi.
+          li.code-examples Code examples and open source framework + gems
+          li.source Access to the book's source
+        == partial 'partials/_buy', locals: {price: 35}
+      .fourty-five
+        h2 Book + Videos
+        ul.includes
+          li.book The book in html, PDF, epub and mobi.
+          li.code-examples Code examples and open source framework (Eldr) + gems
+          li.source Access to the book's source
+          li.screencast-mvc Screencast on building an MVC app on Rack
+          li.screecnast-todos Screencast on creating a TODOS app using Eldr
+        == partial 'partials/_buy', locals: {price: 45}
+      .fifty-five
+        h2 Book + Videos + Bonus Chapters
+        ul.includes
+          li.book The book in html, PDF, epub and mobi.
+          li.code-examples Code examples and open source framework (Eldr) + gems
+          li.source Access to the book's source
+          li.screencast-mvc Screencast on building an MVC app on Rack
+          li.screecnast-todos Screencast on creating a TODOS app using Eldr
+          li.bonus-chapter.app Bonus chapter on building a TODOS app using Eldr
+          li.bonus-chapter.site Bonus on building this site
+          li.bonus-chapter-rack-streaming Bonus chapter on Rack Streaming
+          li.bonus-chapter-realtime-app Bonus chapter on building a real-time chat app
+          li.bonus-chapter.faraday Bonus chapter on Rack patterns for clients (e.g Faraday)
+          li.bonus-chapter.assets Bonus chapter on building assets middleware
+        == partial 'partials/_buy', locals: {price: 55}

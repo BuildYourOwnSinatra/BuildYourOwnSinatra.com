@@ -1,0 +1,290 @@
+GIT
+  remote: git://github.com/BuildYourOwnSinatra/build-your-own-sinatra.gem.git
+  revision: d5a65b18e4d0dfc87b688c48b44f1c4b0a8475ba
+  specs:
+    build-your-own-sinatra (0.0.1)
+      bson_ext (= 1.11.1)
+      mm-sluggable (= 0.3.1)
+      mongo_mapper (= 0.13.1)
+      omniauth-identity
+
+GIT
+  remote: git://github.com/eldr-rb/eldr-action.git
+  revision: d869a7811714336f76f36c3b8b7999f6fbb50665
+  specs:
+    eldr-action (0.0.1)
+      activemodel (~> 4.1)
+      eldr (~> 0.0)
+
+GIT
+  remote: git://github.com/eldr-rb/eldr-assets.git
+  revision: 205d69650f59d0871de7448eb046f90029a51b1f
+  specs:
+    eldr-assets (0.0.1)
+      eldr-rendering (~> 0.0)
+
+GIT
+  remote: git://github.com/eldr-rb/eldr-rendering.git
+  revision: 6a6af59163cccfa184178e61ff641bbb7803cad4
+  specs:
+    eldr-rendering (0.0.1)
+      activesupport (~> 4)
+      eldr (~> 0.0)
+      tilt (~> 1.4)
+
+GIT
+  remote: git://github.com/eldr-rb/eldr-responders.git
+  revision: afb462b8f51235d17755b440d3a5f97aed2c8f76
+  specs:
+    eldr-responders (0.0.1)
+      eldr (~> 0.0)
+      eldr-rendering (~> 0.0)
+      eldr-sessions (~> 0.0)
+      r18n-core (= 2.0.3)
+      rack-accept (= 0.4.5)
+      rack-flash3 (= 1.0.5)
+
+GIT
+  remote: git://github.com/rebelidealist/stripe-ruby-mock.git
+  revision: 067f3ae6f6a31d9776abbc642c422f80d7f436ca
+  specs:
+    stripe-ruby-mock (2.0.5)
+      dante (>= 0.2.0)
+      jimson-temp
+      stripe (>= 1.15.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (4.1.9)
+      activesupport (= 4.1.9)
+      builder (~> 3.1)
+    activesupport (4.1.9)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    addressable (2.3.7)
+    ast (2.0.0)
+    astrolabe (1.3.0)
+      parser (>= 2.2.0.pre.3, < 3.0)
+    bcrypt (3.1.10)
+    bcrypt-ruby (3.1.5)
+      bcrypt (>= 3.1.3)
+    blankslate (3.1.3)
+    bson (1.11.1)
+    bson_ext (1.11.1)
+      bson (~> 1.11.1)
+    builder (3.2.2)
+    chunky_png (1.3.4)
+    compass (1.0.3)
+      chunky_png (~> 1.2)
+      compass-core (~> 1.0.2)
+      compass-import-once (~> 1.0.5)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      sass (>= 3.3.13, < 3.5)
+    compass-core (1.0.3)
+      multi_json (~> 1.0)
+      sass (>= 3.3.0, < 3.5)
+    compass-import-once (1.0.5)
+      sass (>= 3.2, < 3.5)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
+    dante (0.2.0)
+    diff-lcs (1.2.5)
+    dotenv (1.0.2)
+    eldr (0.0.4)
+      fast_blank (= 0.0.2)
+      mustermann (= 0.4.0)
+      rack (~> 1.5)
+    eldr-sessions (0.0.1)
+      eldr (~> 0.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
+    fast_blank (0.0.2)
+    ffaker (1.32.1)
+    ffi (1.9.6)
+    foreman (0.77.0)
+      dotenv (~> 1.0.2)
+      thor (~> 0.19.1)
+    hashie (3.4.0)
+    hike (1.2.3)
+    i18n (0.7.0)
+    jimson-temp (0.9.5)
+      blankslate (>= 3.1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.4)
+      rest-client (~> 1.0)
+    json (1.8.2)
+    jwt (1.2.1)
+    kramdown (1.5.0)
+    mime-types (2.4.3)
+    mina (0.3.3)
+      open4 (~> 1.3.4)
+      rake
+    minitest (5.5.1)
+    mm-sluggable (0.3.1)
+      mongo_mapper (>= 0.9.0)
+    mongo (1.11.1)
+      bson (= 1.11.1)
+    mongo_mapper (0.13.1)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0)
+      mongo (~> 1.8)
+      plucky (~> 0.6.5)
+    multi_json (1.10.1)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
+    mustermann (0.4.0)
+      tool (~> 0.2)
+    netrc (0.10.2)
+    oauth2 (1.0.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
+    octokit (3.8.0)
+      sawyer (~> 0.6.0, >= 0.5.3)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-github (1.1.2)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-identity (1.1.1)
+      bcrypt-ruby (~> 3.0)
+      omniauth (~> 1.0)
+    omniauth-oauth2 (1.2.0)
+      faraday (>= 0.8, < 0.10)
+      multi_json (~> 1.3)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
+    opal (0.7.1)
+      hike (~> 1.2)
+      sourcemap (~> 0.1.0)
+      sprockets (>= 2.2.3, < 4.0.0)
+      tilt (~> 1.4)
+    open4 (1.3.4)
+    parser (2.2.0.3)
+      ast (>= 1.1, < 3.0)
+    plucky (0.6.6)
+      mongo (~> 1.5)
+    powerpack (0.0.9)
+    puma (2.10.2)
+      rack (>= 1.1, < 2.0)
+    r18n-core (2.0.3)
+    rack (1.6.0)
+    rack-accept (0.4.5)
+      rack (>= 0.4)
+    rack-flash3 (1.0.5)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rainbow (2.0.0)
+    rake (10.4.2)
+    rb-fsevent (0.9.4)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
+    redis (3.2.1)
+    redis-rack (1.5.0)
+      rack (~> 1.5)
+      redis-store (~> 1.1.0)
+    redis-store (1.1.4)
+      redis (>= 2.2)
+    require_all (1.3.2)
+    rest-client (1.7.3)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
+    rouge (1.8.0)
+    rspec (3.1.0)
+      rspec-core (~> 3.1.0)
+      rspec-expectations (~> 3.1.0)
+      rspec-mocks (~> 3.1.0)
+    rspec-core (3.1.7)
+      rspec-support (~> 3.1.0)
+    rspec-expectations (3.1.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.1.0)
+    rspec-mocks (3.1.3)
+      rspec-support (~> 3.1.0)
+    rspec-support (3.1.2)
+    rubocop (0.28.0)
+      astrolabe (~> 1.3)
+      parser (>= 2.2.0.pre.7, < 3.0)
+      powerpack (~> 0.0.6)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.4)
+    ruby-progressbar (1.7.1)
+    safe_yaml (1.0.4)
+    sass (3.4.12)
+    sawyer (0.6.0)
+      addressable (~> 2.3.5)
+      faraday (~> 0.8, < 0.10)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
+    slim (3.0.1)
+      temple (~> 0.7.3)
+      tilt (>= 1.3.3, < 2.1)
+    sourcemap (0.1.1)
+    sprockets (2.12.3)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    sprockets-sass (1.3.1)
+      sprockets (~> 2.0)
+      tilt (~> 1.1)
+    stripe (1.20.0)
+      json (~> 1.8.1)
+      mime-types (>= 1.25, < 3.0)
+      rest-client (~> 1.4)
+    temple (0.7.5)
+    thor (0.19.1)
+    thread_safe (0.3.4)
+    tilt (1.4.1)
+    tool (0.2.3)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    webmock (1.20.4)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  build-your-own-sinatra!
+  compass (= 1.0.3)
+  eldr
+  eldr-action!
+  eldr-assets!
+  eldr-rendering!
+  eldr-responders!
+  eldr-sessions
+  factory_girl
+  ffaker
+  foreman
+  kramdown
+  mina
+  octokit
+  omniauth-github (= 1.1.2)
+  opal (= 0.7.1)
+  puma (= 2.10.2)
+  rack-test (= 0.6.2)
+  rake (= 10.4.2)
+  redis-rack (= 1.5.0)
+  require_all (= 1.3.2)
+  rouge
+  rspec (= 3.1.0)
+  rubocop (= 0.28.0)
+  shoulda-matchers
+  slim (= 3.0.1)
+  sprockets (= 2.12.3)
+  sprockets-sass (= 1.3.1)
+  stripe-ruby-mock!
+  webmock
