@@ -43,7 +43,6 @@ task :seed do
                            slug:    'everything',
                            chapters: chapters + bonus_chapters)
 
-  package.screencasts.push(*screencasts)
   package.screencasts << screencast_mvc
   package.screencasts << screencast_todos
   package.save
