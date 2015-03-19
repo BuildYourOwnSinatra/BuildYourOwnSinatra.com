@@ -3,7 +3,14 @@ html
   head
     link href='http://fonts.googleapis.com/css?family=Lato:400,300,300italic,100italic,100,400italic,700' rel='stylesheet' type='text/css'
     == css 'app'
-
+    - if ENV['RACK_ENV'] == 'development'
+      |
+        <script type="text/javascript" src="http://localhost:48626/takana.js"></script>
+        <script type="text/javascript">
+          takanaClient.run({
+            host: 'localhost:48626' // optional, defaults to localhost:48626
+          });
+        </script>
   body
     header
       .container
