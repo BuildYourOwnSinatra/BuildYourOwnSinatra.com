@@ -33,7 +33,6 @@ class CreateAuthorizedUser < Eldr::Action
     end
 
     set_current_user @identity.user
-
-    respond(current_user, location: '/#buy', notice: @message)
+    respond(current_user, force_redirect: true, location: '/#buy', message: @message)
   end
 end

@@ -52,6 +52,6 @@ class PurchaseBook < Eldr::Action
       @message = 'Could not add you to the GitHub repo! Contact me!'
     end
 
-    respond(purchase, location: '/purchases', message: @message)
+    respond(purchase, force_redirect: true, location: ENV['READ_URL'], message: @message)
   end
 end
