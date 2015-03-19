@@ -12,6 +12,9 @@ if ENV['RACK_ENV'] == 'test'
 end
 
 task :seed do
+  require 'bundler/setup'
+  require_relative 'app/app.rb'
+
   chapters       = ['introduction']
   bonus_chapters = ['']
 
@@ -27,10 +30,10 @@ task :seed do
   ##
   # Packages
   ##
-  Package.create(name: 'The Book', price: 35, slug: 'book', chapters: chapters)
+  Package.create(name: 'The Book', price: 3500, slug: 'book', chapters: chapters)
 
   package = Package.create(name:     'The Book + Screencasts',
-                           price:    45,
+                           price:    4500,
                            slug:     'book-and-screencasts',
                            chapters: chapters)
 
@@ -39,7 +42,7 @@ task :seed do
   package.save
 
   package = Package.create(name:   'The Book + Screencasts + Bonus Chapters',
-                           price:   55,
+                           price:   5500,
                            slug:    'everything',
                            chapters: chapters + bonus_chapters)
 
