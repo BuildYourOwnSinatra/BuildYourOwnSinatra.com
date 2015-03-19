@@ -23,7 +23,7 @@ gem 'octokit'
 gem 'opal', '0.7.1'
 gem 'sprockets', '2.12.3'
 gem 'sprockets-sass', '1.3.1'
-gem 'compass', '1.0.3'
+gem 'bourbon', '3.2.4'
 gem 'build-your-own-sinatra', github: 'BuildYourOwnSinatra/build-your-own-sinatra.gem'
 
 group :test do

@@ -37,7 +37,7 @@ require_rel 'controllers/*.rb'
 require 'sprockets'
 require 'sprockets-sass'
 require 'sass'
-require 'compass'
+require 'bourbon'
 require 'opal'
 
 opal = Opal::Server.new do |s|
