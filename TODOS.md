@@ -1,1 +1,2 @@
+- [ ] catch all errors
 - [ ] get Dockerfile working
