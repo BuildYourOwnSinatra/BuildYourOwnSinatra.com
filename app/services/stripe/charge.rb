@@ -1,7 +1,7 @@
 class Charge < Eldr::Action
-  attr_accessor :price, :customer_id, :amount, :stripe_charge
+  attr_accessor :price, :customer_id, :amount, :stripe_charge, :id
 
-  def initialize(price: 35, customer_id: nil)
+  def initialize(price: 3500, customer_id: nil)
     @price       = price
     @amount      = price
     @customer_id = customer_id
@@ -13,6 +13,8 @@ class Charge < Eldr::Action
                                              currency:    'usd',
                                              customer:     customer_id,
                                              description: 'Purchase of Build your Own Sinatra')
+      @id = @stripe_charge.id
+      @stripe_charge
     rescue => error
       handle_error(error)
     end
