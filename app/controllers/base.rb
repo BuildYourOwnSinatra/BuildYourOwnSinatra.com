@@ -10,6 +10,6 @@ class Base < Eldr::App
 
   use OmniAuth::Builder do
     provider :identity, fields: [:email]
-    provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: 'user' if ENV.include? 'GITHUB_KEY'
+    provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: 'user:email' if ENV.include? 'GITHUB_KEY'
   end
 end
