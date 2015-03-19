@@ -8,6 +8,7 @@ ENV['MONGODB_URI']    ||= 'mongodb://localhost:27017/byos'
 ENV['ASSETS_PATH']    ||= File.join(__dir__, '/assets')
 ENV['APP_ROOT']       ||= File.join(__dir__)
 ENV['RACK_ENV']       ||= 'development'
+ENV['READ_URL']       ||= 'https://book.buildYourOwnSinatra.com'
 
 require 'require_all'
 require 'stripe'
