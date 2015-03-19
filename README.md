@@ -115,5 +115,5 @@ gem install bourbon -v 3.2.4
 Then when booting takana, pass the path for the bourbon's sass to it:
 
 ```sh
-takana . -i ~/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bourbon-3.2.4/distg
+takana . -i ~/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bourbon-3.2.4/dist
 ```
