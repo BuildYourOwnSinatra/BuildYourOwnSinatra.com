@@ -11,25 +11,3 @@
 
   a:hover
     color: $very-light-gray
-
-.excerpt-button
-  @extend .button-turquiose
-  @include background-image(linear-gradient(-45deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1)))
-  background: repeat scroll 0% 0%, none repeat scroll 0% 0% $turquiose
-  color: #fff
-  border-radius: 5px
-
-  &:hover
-    @include background-image(linear-gradient(-45deg,rgba(255,255,255,0),rgba(255,255,255,0.1)), $dark-turquiose)
-
-  &:active
-    -webkit-transform: perspective(0) scale(0.88)
-
-.buy-button
-  @extend .excerpt-button
-  @include background-image(linear-gradient(-45deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1)))
-  background: repeat scroll 0% 0%, none repeat scroll 0% 0% $blue
-
-  &:hover
-    @include background-image(linear-gradient(-45deg,rgba(255,255,255,0),rgba(255,255,255,0.1)))
-    background: $dark-blue
