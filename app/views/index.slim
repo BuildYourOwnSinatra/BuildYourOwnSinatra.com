@@ -7,9 +7,11 @@ html
       |
         <script type="text/javascript" src="http://localhost:48626/takana.js"></script>
         <script type="text/javascript">
-          takanaClient.run({
-            host: 'localhost:48626' // optional, defaults to localhost:48626
-          });
+          if (typeof(takanaClient) != "undefined") {
+            takanaClient.run({
+              host: 'localhost:48626' // optional, defaults to localhost:48626
+            });
+          }
         </script>
   body
     header
@@ -24,7 +26,7 @@ html
             A book about Rack, Sinatra, Rails, and all the fustrating things inbetween.
             Master the rack spec, write raw rack apps, learn how to write middleware, how to build a router, and more!
           a.excerpt-button href='https://book.buildYourOwnSinatra.com' Read an Excerpt
-          a.buy-button href="#packages" Buy It
+          a.buy-it-button href="#buy" Buy It
 
         .cover
           .code
@@ -138,5 +140,5 @@ html
             markdown:
               A minimal, lighweight, clear and powerful framework. A framework that doesn't hide the rack and comes without magic. It's called Eldr and you can fork it [on GitHub](https:/github.con/eldr-rb/eldr)
 
-      section.buy
+      section.buy#buy
           == partial 'partials/_buy', locals: {price: 35}
