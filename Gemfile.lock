@@ -34,7 +34,7 @@ GIT
 
 GIT
   remote: git://github.com/eldr-rb/eldr-responders.git
-  revision: afb462b8f51235d17755b440d3a5f97aed2c8f76
+  revision: 28c1899ca261b332485b632ec31f83e183b756fc
   specs:
     eldr-responders (0.0.1)
       eldr (~> 0.0)
