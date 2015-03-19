@@ -1,7 +1,7 @@
 describe Users do
   describe 'GET /login' do
     it 'redirects to /auth/github' do
-      get '/login'
+      get '/login-with-github-then-buy'
       expect(last_response.status).to eq(303)
       expect(last_response.headers['Location']).to eq('/auth/github')
     end

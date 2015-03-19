@@ -41,7 +41,7 @@ describe Purchases do
       it 'redirects to purchases' do
         post '/purchases', {package: package.slug, stripeToken: 'bob'}, env
         expect(last_response.status).to eq(303)
-        expect(last_response.headers['Location']).to eq('/purchases')
+        expect(last_response.headers['Location']).to eq(ENV['READ_URL'])
       end
     end
 
