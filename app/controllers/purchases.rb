@@ -16,7 +16,7 @@ class Purchases < Base
   end
 
   before(:index, :create, :upgrade, :refund) do
-    raise Errors::NotAuthorized, 'Not Authorized' unless current_user
+    raise Errors::NotAuthorized, 'Not Authorized' unless signed_in?
   end
 
   get '/purchases', name: :index do
