@@ -1,18 +1,23 @@
 - price ||= 35
 
 - if signed_in?
-  - desc  ||= 'The Book'
+  - if current_user.package.nil?
+    - desc  ||= 'The Book'
 
-  form action="/purchases" method="POST"
-    script [
-      src="https://checkout.stripe.com/checkout.js"
-      class="stripe-button"
-      data-key=ENV['STRIPE_PUBLIC']
-      data-name="Build Your Own Sinatra"
-      data-description=desc
-      data-amount="#{price * 100}"
-      data-email=current_user.email
-      data-label="Buy now for $#{price}"]
+    form action="/purchases" method="POST"
+      script [
+        src="https://checkout.stripe.com/checkout.js"
+        class="stripe-button"
+        data-key=ENV['STRIPE_PUBLIC']
+        data-name="Build Your Own Sinatra"
+        data-description=desc
+        data-amount="#{price * 100}"
+        data-email=current_user.email
+        data-label="Buy now for $#{price}"]
+
+  - else
+
+    a.read-it-button href=ENV['READ_URL'] Read It
 
 - else
 

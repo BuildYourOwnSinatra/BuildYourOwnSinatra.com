@@ -25,8 +25,8 @@ html
             The time I cussed at `helpers do`, I wrote a book on Ruby frameworks.
             A book about Rack, Sinatra, Rails, and all the fustrating things inbetween.
             Master the rack spec, write raw rack apps, learn how to write middleware, how to build a router, and more!
-          a.excerpt-button href='https://book.buildYourOwnSinatra.com' Read an Excerpt
-          a.buy-it-button href="#buy" Buy It
+          a.excerpt-button href=ENV['READ_URL'] Read an Excerpt
+          == partial 'partials/_buy', locals: {price: 35}
 
         .cover
           .code

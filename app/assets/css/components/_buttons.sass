@@ -1,0 +1,31 @@
+.stripe-button-el
+  text-decoration: none
+  background-image: none
+  border-radius: 0
+  font-size: 1.2em
+
+  span
+    background: none
+    text-shadow: none
+    box-shadow: none
+    font-size: inherit
+    font-weight: 100
+    line-height: inherit
+    font-family: inherit
+    padding: 0
+    height: auto
+    min-height: 0 !important
+
+.excerpt-button, .read-it-button
+  @extend .button-turquiose
+  @include background-image(linear-gradient(-45deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1)))
+  background: repeat scroll 0% 0%, none repeat scroll 0% 0% $turquiose
+  color: #fff
+  border-radius: 5px
+  margin-right: 18px
+
+  &:hover
+    @include background-image(linear-gradient(-45deg,rgba(255,255,255,0),rgba(255,255,255,0.1)), $dark-turquiose)
+
+  &:active
+    -webkit-transform: perspective(0) scale(0.88)
