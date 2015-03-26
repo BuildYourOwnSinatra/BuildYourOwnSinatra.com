@@ -3,24 +3,6 @@ describe Purchases do
   before { StripeMock.start }
   after { StripeMock.stop }
 
-  describe 'GET /purchases' do
-    context 'when authorized' do
-      let(:user) { FactoryGirl.create(:user_with_purchases) }
-
-      it 'renders a purchases page' do
-        get '/purchases', nil, {'rack.session' => { "#{ENV['SESSION_ID']}" => user.id }}
-        expect(last_response.status).to eq(200)
-      end
-    end
-
-    context 'when NOT authorized' do
-      it 'returns not authorized' do
-        get '/purchases'
-        expect(last_response.status).to eq(401)
-      end
-    end
-  end
-
   describe 'POST /purchases' do
     context 'when logged in an data is valid' do
       before do
