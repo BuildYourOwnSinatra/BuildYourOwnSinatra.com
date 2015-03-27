@@ -5,7 +5,14 @@ class Main < Eldr::App
   include Eldr::Assets
   include Eldr::Sessions
 
-  use Rack::Session::Redis, redis_server: "#{ENV['REDIS_URL']}/#{ENV['REDIS_NAMESPACE']}"
+  uri = URI.parse(ENV['MONGODB_URI'])
+  use Rack::Session::Moneta, store: Moneta.new(:Mongo, {
+    :host     => uri.host,
+    :port     => uri.port,
+    :db       => uri.path.gsub(/^\//, ''),
+    :user     => uri.user,
+    :password => uri.password,
+  })
   use Rack::Flash, accessorize: [:notice, :error]
 
   set :views_dir, File.join(__dir__, '../views')

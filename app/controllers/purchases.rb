@@ -6,7 +6,6 @@ class Purchases < Base
   include Eldr::Rendering
   include Eldr::Sessions
   include Eldr::Responders
-  use Rack::Session::Redis, redis_server: "#{ENV['REDIS_URL']}/#{ENV['REDIS_NAMESPACE']}"
 
   set :views_dir, File.join(__dir__, '../views')
 
