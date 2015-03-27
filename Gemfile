@@ -11,6 +11,7 @@ gem 'eldr-rendering',  github: 'eldr-rb/eldr-rendering'
 gem 'eldr-sessions'
 gem 'eldr-assets',     github: 'eldr-rb/eldr-assets'
 gem 'eldr-responders', github: 'eldr-rb/eldr-responders'
+gem 'rack-robustness'
 
 gem 'stripe'
 gem 'kramdown'

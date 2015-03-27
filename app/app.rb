@@ -21,6 +21,7 @@ require 'eldr/sessions'
 require 'eldr/action'
 require 'eldr/responders'
 require 'eldr/assets'
+require 'rack/robustness'
 require 'rack/session/moneta'
 require 'omniauth-github'
 require 'build-your-own-sinatra'
@@ -51,6 +52,13 @@ sprockets_env = Sprockets::Environment.new do |env|
 end
 
 App = Rack::Builder.new do
+  # Catch Explosions of the worst kind
+  use Rack::Robustness do |g|
+    g.status 500
+    g.content_type 'text/plain'
+    g.body 'Sorry, my backend exploded! Mention me (@k_2052) and let me know!'
+  end
+
   use Rack::Static, root: File.join(__dir__, 'assets'), urls: ['/images']
 
   map '/assets/js' do
