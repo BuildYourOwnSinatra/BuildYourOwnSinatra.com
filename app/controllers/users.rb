@@ -11,6 +11,12 @@ class Users < Base
     env['omniauth.auth']
   end
 
+  get '/login' do
+    response = Rack::Response.new '', 303
+    response['Location'] = '/auth/github'
+    response
+  end
+
   get '/login-with-github-then-buy' do
     response = Rack::Response.new '', 303
     response['Location'] = '/auth/github'
