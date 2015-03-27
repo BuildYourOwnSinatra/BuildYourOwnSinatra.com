@@ -6,12 +6,13 @@ class Main < Eldr::App
   include Eldr::Sessions
 
   uri = URI.parse(ENV['MONGODB_URI'])
-  use Rack::Session::Moneta, store: Moneta.new(:Mongo, {
+  ENV['SESSIONS_DOMAIN'] ||= '127.0.0.1'
+  use Rack::Session::Moneta, domain: ENV['SESSIONS_DOMAIN'], store: Moneta.new(:Mongo, {
     :host     => uri.host,
     :port     => uri.port,
     :db       => uri.path.gsub(/^\//, ''),
     :user     => uri.user,
-    :password => uri.password,
+    :password => uri.password
   })
   use Rack::Flash, accessorize: [:notice, :error]
 
