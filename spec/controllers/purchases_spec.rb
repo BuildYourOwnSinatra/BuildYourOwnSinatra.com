@@ -20,17 +20,29 @@ describe Purchases do
       let(:user)    { FactoryGirl.create(:user) }
       let(:package) { FactoryGirl.create(:package) }
 
-      it 'redirects to purchases' do
+      it "redirects to ENV['READ_URL']" do
         post '/purchases', {package: package.slug, stripeToken: 'bob'}, env
         expect(last_response.status).to eq(303)
         expect(last_response.headers['Location']).to eq(ENV['READ_URL'])
       end
     end
 
-    context 'when NOT authorized' do
-      it 'returns not authorized' do
-        post '/purchases'
-        expect(last_response.status).to eq(401)
+    context 'when NOT logged in' do
+      before do
+        allow_any_instance_of(CreateCustomer).to receive(:valid?).and_return(true)
+        allow_any_instance_of(CreateCustomer).to receive(:id).and_return('customer_id')
+
+        allow_any_instance_of(Charge).to receive(:id).and_return('cats-r-awesome')
+        allow_any_instance_of(Charge).to receive(:valid?).and_return(true)
+
+      end
+      
+      let(:package) { FactoryGirl.create(:package) }
+
+      it "redirects to ENV['READ_URL']" do
+        post '/purchases', {package: package.slug, stripeToken: 'bob', stripeEmail: 'bob@bob.com'}
+        expect(last_response.status).to eq(303)
+        expect(last_response.headers['Location']).to eq(ENV['READ_URL'])
       end
     end
   end

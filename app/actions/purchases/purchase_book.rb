@@ -7,9 +7,10 @@ class PurchaseBook < Eldr::Action
   attr_accessor :purchase, :user, :stripe_token, :env
   set :views_dir, File.join(__dir__, '../../views')
 
-  def initialize(user:, package:, stripe_token:)
+  def initialize(user:, package:, stripe_token:, stripe_email:)
     @purchase = Purchase.new
-    @purchase.user    = user
+    user ||= User.create(email: stripe_email)
+    @purchase.user     = user
     @purchase.packages << package
 
     @user          = user
@@ -44,12 +45,14 @@ class PurchaseBook < Eldr::Action
       return respond(purchase, location: '/#buy', message: 'Could not charge you! Contact Support!')
     end
 
-    add_team_member = AddTeamMembership.new(username: user.username)
-    add_team_member.call(env)
+    unless user.username.nil?
+      add_team_member = AddTeamMembership.new(username: user.username)
+      add_team_member.call(env)
 
-    unless add_team_member.valid?
-      purchase.errors.merge!(add_team_member.errors)
-      @message = 'Could not add you to the GitHub repo! Contact me!'
+      unless add_team_member.valid?
+        purchase.errors.merge!(add_team_member.errors)
+        @message = 'Could not add you to the GitHub repo! Contact me!'
+      end
     end
 
     respond(purchase, force_redirect: true, location: ENV['READ_URL'], message: @message)

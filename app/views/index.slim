@@ -37,7 +37,7 @@ html
             The time I cussed at `helpers do`, I wrote a book on Ruby frameworks.
             A book about Rack, Sinatra, Rails, and all the fustrating things inbetween.
             Master the rack spec, write raw rack apps, learn how to write middleware, how to build a router, and more!
-          a.excerpt-button href=ENV['READ_URL'] Read an Excerpt
+          a.excerpt-button href=ENV['READ_URL'] Read It
           == partial 'partials/_buy', locals: {price: 35}
 
         .cover
@@ -155,7 +155,10 @@ html
   .bottom
     .container
       section.buy#buy
-          == partial 'partials/_buy', locals: {price: 35}
+        == partial 'partials/_buy', locals: {price: 35}
+
+        markdown:
+          * Sold on the honor system. If you lready bought it then visit https://book.buildYourOwnSinatra.com to read it
 
     section.about-author
       .container

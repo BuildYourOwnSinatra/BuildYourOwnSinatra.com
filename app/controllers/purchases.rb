@@ -14,7 +14,7 @@ class Purchases < Base
     raise Errors::NotFound unless @purchase
   end
 
-  before(:index, :create, :upgrade, :refund) do
+  before(:index, :upgrade, :refund) do
     raise Errors::NotAuthorized, 'Not Authorized' unless signed_in?
   end
 
@@ -26,7 +26,8 @@ class Purchases < Base
   post '/purchases', name: :create do
     PurchaseBook.new(package: Package.find_by_slug(params['package'] || 'book'),
                      user: current_user,
-                     stripe_token: params['stripeToken']).call(env)
+                     stripe_token: params['stripeToken'],
+                     stripe_email: params['stripeEmail']).call(env)
   end
 
   put '/purchases/:id/upgrade', name: :upgrade do |env|
